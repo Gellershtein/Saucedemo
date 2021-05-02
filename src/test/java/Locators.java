@@ -26,7 +26,7 @@ public class Locators {
         driver.findElement(By.xpath("//*[@class='inventory_item']//following::button"));
         driver.findElement(By.xpath("//*[@id='remove-sauce-labs-backpack']//parent::div"));
         driver.findElement(By.xpath("//*[@id='shopping_cart_container']//preceding::*"));
-        driver.findElement(By.xpath("//div[@class='inventory_item_price' and text()='29.99']");
+        driver.findElement(By.xpath("//div[@class='inventory_item_price' and text()='29.99']"));
 
         //CSS
         //https://www.saucedemo.com/cart.html
