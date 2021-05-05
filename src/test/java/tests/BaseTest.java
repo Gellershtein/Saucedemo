@@ -35,8 +35,7 @@ public abstract class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
-//        productsPage = new ProductsPage(driver);
-        productsPage = new ProductsPage(driver, select);
+        productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
     }
 

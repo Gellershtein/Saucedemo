@@ -8,14 +8,14 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class ProductsPage extends BaseElements {
-
+    Select select;
     public static final By SORT_PRODUCTS_FILTER = By.cssSelector(".product_sort_container");
     String addToCartButton = "//*[contains(text(), '%s')]//ancestor::*[@class='inventory_item']//button";
     String productPrice = "//*[contains(text(), '%s')]//ancestor::*[@class='inventory_item']//child::*[@class='inventory_item_price']";
     public static final By SORT_FILTER_ELEMENT = By.cssSelector(".product_sort_container");
 
-    public ProductsPage(WebDriver driver, Select select) {
-        super(driver, select);
+    public ProductsPage(WebDriver driver) {
+        super(driver);
     }
 
     @Override
@@ -40,5 +40,4 @@ public class ProductsPage extends BaseElements {
 //        }
 //sortFilterOptionsList.get(sortFilterOptionsList.indexOf(sortFilterOptionsList.contains(sortValue))).click();
     }
-
 }
