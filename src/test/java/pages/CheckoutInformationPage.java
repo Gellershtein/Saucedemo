@@ -18,6 +18,6 @@ public class CheckoutInformationPage extends BasePage {
 
     @Override
     public void open() {
-        driver.get("https://www.saucedemo.com/checkout-step-one.html");
+        driver.get(URL + "/checkout-step-one.html");
     }
 }

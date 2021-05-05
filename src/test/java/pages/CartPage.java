@@ -16,7 +16,7 @@ public class CartPage extends BasePage {
 
     @Override
     public void open() {
-        driver.get("https://www.saucedemo.com/cart.html");
+        driver.get(URL + "/cart.html");
     }
 
     public void removeFromCart(String productName) {

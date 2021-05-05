@@ -20,7 +20,7 @@ public class ProductsPage extends BaseElements {
 
     @Override
     public void open() {
-        driver.get("https://www.saucedemo.com/inventory.html");
+        driver.get(URL + "/inventory.html");
     }
 
     public void addToCart(String productName) {

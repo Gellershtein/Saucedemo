@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
 
     @Override
     public void open() {
-        driver.get("https://www.saucedemo.com");
+        driver.get(URL);
     }
 
     public void logIn(String user, String password) {

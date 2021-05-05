@@ -25,7 +25,6 @@ public abstract class BaseTest {
     public static String PROBLEM_USER = "problem_user";
     public static String PERFORMANCE_GLITCH_USER = "performance_glitch_user";
     public static String PASSWORD = "secret_sauce";
-    public static String URL = "https://www.saucedemo.com";
 
     @BeforeMethod
     public void setUp() {

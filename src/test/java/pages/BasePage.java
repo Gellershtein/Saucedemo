@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 public abstract class BasePage {
     WebDriver driver;
     Select select;
-    String URL;
+    public static String URL = "https://www.saucedemo.com";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
