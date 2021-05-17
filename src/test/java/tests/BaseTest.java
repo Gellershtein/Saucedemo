@@ -13,13 +13,10 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
     WebDriver driver;
-    Select select;
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
-    CheckoutInformationPage checkoutInformationPage;
-    CheckoutOverviewPage checkoutOverviewPage;
-    CheckoutCompletePage checkoutCompletePage;
+    BurgerMenuPage burgerMenuPage;
     public static String USER = "standard_user";
     public static String LOCKED_USER = "locked_out_user";
     public static String PROBLEM_USER = "problem_user";
@@ -35,6 +32,7 @@ public abstract class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
+//        loginPage = new LoginPageFactory(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
     }
