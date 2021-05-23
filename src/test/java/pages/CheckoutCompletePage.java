@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutCompletePage extends BasePage {
-
     //BUTTONS
     public static final By BACK_TO_PRODUCTS_BUTTON = By.id("back-to-products");
     //TEXTS

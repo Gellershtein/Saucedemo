@@ -8,9 +8,11 @@ public class CheckoutInformationPage extends BasePage {
     public static final By CONTINUE_BUTTON = By.id("continue");
     public static final By CANCEL_BUTTON = By.id("cancel");
     //CHECKOUT FORM
-    public static final By FIRST_NAME_FIELD = By.id("cancel");
+    public static final By FIRST_NAME_FIELD = By.id("first-name");
     public static final By LAST_NAME_FIELD = By.id("last-name");
     public static final By ZIPCODE_POSTALCODE_FIELD = By.id("postal-code");
+    public static final By CHECKOUTERROR_MESSAGE = By.cssSelector("[data-test=error]");
+    public static final By PAGE_TITLE = By.cssSelector("[class='title']");
 
     public CheckoutInformationPage(WebDriver driver) {
         super(driver);
@@ -19,5 +21,19 @@ public class CheckoutInformationPage extends BasePage {
     @Override
     public void open() {
         driver.get(URL + "/checkout-step-one.html");
+    }
+
+    public String isOpened() {
+        return driver.findElement(PAGE_TITLE).getText();
+    }
+
+    public void fillingCheckoutInformation(String firstName, String lastName, String postalCode) {
+        driver.findElement(FIRST_NAME_FIELD).sendKeys(firstName);
+        driver.findElement(LAST_NAME_FIELD).sendKeys(lastName);
+        driver.findElement(ZIPCODE_POSTALCODE_FIELD).sendKeys(postalCode);
+        driver.findElement(CONTINUE_BUTTON).click();
+    }
+    public String getCheckoutErrorMessage() {
+        return driver.findElement(CHECKOUTERROR_MESSAGE).getText();
     }
 }
