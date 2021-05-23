@@ -27,6 +27,7 @@ public class CartPage extends BasePage {
     public String getProductPrice(String productName) {
         return driver.findElement(By.xpath(String.format(productPriceInCart, productName))).getText();
     }
+
     public String getProductName() {
         return driver.findElement(PRODUCT_NAME).getText();
     }

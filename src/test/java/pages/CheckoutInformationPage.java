@@ -33,6 +33,7 @@ public class CheckoutInformationPage extends BasePage {
         driver.findElement(ZIPCODE_POSTALCODE_FIELD).sendKeys(postalCode);
         driver.findElement(CONTINUE_BUTTON).click();
     }
+
     public String getCheckoutErrorMessage() {
         return driver.findElement(CHECKOUTERROR_MESSAGE).getText();
     }

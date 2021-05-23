@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class BurgerMenuTest extends BaseTest {
 
-    @Test (description = "Logout should navigate to Login page")
+    @Test(description = "Logout should navigate to Login page")
     public void logoutShouldNavigateToLogin() {
         loginPage.open();
         loginPage.logIn(USER, PASSWORD);
@@ -18,7 +18,7 @@ public class BurgerMenuTest extends BaseTest {
         assertTrue(isOpened, "Login Page is not opened");
     }
 
-    @Test (description = "Check SauceLabs link")
+    @Test(description = "Check SauceLabs link")
     public void linkAboutShouldBeCorrect() {
         loginPage.open();
         loginPage.logIn(USER, PASSWORD);

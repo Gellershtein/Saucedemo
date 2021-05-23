@@ -1,8 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
@@ -26,7 +24,7 @@ public class LoginPage extends BasePage {
         return driver.findElement(LOGIN_BUTTON).isDisplayed();
     }
 
-        public void logIn(String user, String password) {
+    public void logIn(String user, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(user);
         driver.findElement(PASSWORD).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();

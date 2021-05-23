@@ -25,7 +25,7 @@ public class CheckoutTest extends BaseTest {
         cartPage.checkoutButton();
         checkoutInformationPage.fillingCheckoutInformation(firstName, lastName, postalCode);
         String errorCheckoutPage = checkoutInformationPage.getCheckoutErrorMessage();
-        assertEquals(errorCheckoutPage, errorMessage,"Error message is not correct");
+        assertEquals(errorCheckoutPage, errorMessage, "Error message is not correct");
     }
 
     @Test(description = "Positive test for Checkout form")

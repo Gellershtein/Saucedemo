@@ -44,7 +44,7 @@ public abstract class BaseTest {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
-        testContext.setAttribute("driver",driver);
+        testContext.setAttribute("driver", driver);
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
