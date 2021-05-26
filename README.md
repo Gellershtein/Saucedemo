@@ -9,7 +9,7 @@ Test Automation framework for salesforce.com
 
 - Maven 3
 - Java 8
-- Chrome browser
+- Chrome browsers
 
 #Technologies/Libraries
 
