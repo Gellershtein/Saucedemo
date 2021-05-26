@@ -2,7 +2,7 @@ Test Automation framework for salesforce.com
 
 #CHECKLIST
 
-- CREATE CONTACT
+- CREATE CONTACTS
 - CRATE ACCOUNT
 
 #PRE-CONDITIONS
