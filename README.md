@@ -2,14 +2,14 @@ Test Automation framework for salesforce.com
 
 #CHECKLIST
 
-- CREATE CONTACT
-- CRATE ACCOUNT
+- CREATE CONTACTS
+- CRATE ACCOUNTS
 
 #PRE-CONDITIONS
 
 - Maven 3
 - Java 8
-- Chrome browser
+- Chrome browsers
 
 #Technologies/Libraries
 
