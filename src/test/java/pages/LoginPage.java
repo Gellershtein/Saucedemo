@@ -1,7 +1,9 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.AllureUtils;
 
 public class LoginPage extends BasePage {
 
@@ -15,6 +17,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Open Login page")
     @Override
     public void open() {
         driver.get(URL);
@@ -24,10 +27,12 @@ public class LoginPage extends BasePage {
         return driver.findElement(LOGIN_BUTTON).isDisplayed();
     }
 
+    @Step("Login by user: {user}")
     public void logIn(String user, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(user);
         driver.findElement(PASSWORD).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
+        AllureUtils.takeScreenshot(driver);
     }
 
     public String getError() {
