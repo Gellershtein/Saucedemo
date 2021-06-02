@@ -31,14 +31,14 @@ public abstract class BaseTest {
     public static final String POSTALCODE = "123456";
 
     @Parameters({"browser"})
-    @BeforeMethod
+    @BeforeMethod(description = "Open browser")
     public void setUp(@Optional("chrome") String browser, ITestContext testContext) {
         System.out.println(browser);
         if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
-//        options.addArguments("--headless");
+            options.addArguments("--headless");
             driver = new ChromeDriver(options);
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -57,7 +57,7 @@ public abstract class BaseTest {
         burgerMenuPage = new BurgerMenuPage(driver);
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true, description = "Close browser")
     public void tearDown() {
         driver.quit();
     }
