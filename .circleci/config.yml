@@ -38,6 +38,7 @@ jobs:
       - store_artifacts:
           path: target/site/allure-maven-plugin/
 workflows:
+  version: 2
   commit:
     jobs:
       - ui-tests
