@@ -1,8 +1,11 @@
 package pages;
 
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class BurgerMenuPage extends BasePage {
 
     public static final By BURGER_MENU_BUTTON = By.id("react-burger-menu-btn");
@@ -18,11 +21,14 @@ public class BurgerMenuPage extends BasePage {
         driver.findElement(BURGER_LOGOUT_BUTTON).click();
     }
 
+    @Step("Click Burger menu")
     public void clickBurgerMenu() {
+        log.info("Clicking Burger menu button");
         driver.findElement(BURGER_MENU_BUTTON).click();
     }
-
+    @Step("Get link from Burger menu")
     public String getLink() {
+        log.info("Getting link from Burger menu");
         return driver.findElement(SAUCELABS_LINK).getAttribute("href");
     }
 }
