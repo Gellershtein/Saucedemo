@@ -1,9 +1,10 @@
 package pages;
 
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+@Log4j2
 public class CartPage extends BasePage {
     //BUTTONS
     public static final By CHECKOUT_BUTTON = By.id("checkout");
@@ -19,9 +20,10 @@ public class CartPage extends BasePage {
     @Step("Open Cart page")
     @Override
     public void open() {
+        log.info("Opening the Cart page");
         driver.get(URL + "/cart.html");
     }
-
+    @Step("Remove product from Cart")
     public void removeFromCart(String productName) {
         driver.findElement(By.xpath(String.format(removeButtonInCart, productName))).click();
     }
@@ -34,7 +36,9 @@ public class CartPage extends BasePage {
         return driver.findElement(PRODUCT_NAME).getText();
     }
 
+    @Step("Click Checkout button")
     public void checkoutButton() {
+        log.info("Clicking Checkout button");
         driver.findElement(CHECKOUT_BUTTON).click();
     }
 }
