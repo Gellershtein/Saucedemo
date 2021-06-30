@@ -12,7 +12,6 @@ public class ProductsTest extends BaseTest {
     public void productShouldBeAddedIntoCart() {
         loginPage.open();
         loginPage.logIn(USER, PASSWORD);
-
         productsPage.addToCart(PRODUCT_NAME);
         String productPrice = productsPage.getProductPrice(PRODUCT_NAME);
         //TODO validate name and price

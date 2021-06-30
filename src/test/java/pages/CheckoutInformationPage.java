@@ -22,7 +22,9 @@ public class CheckoutInformationPage extends BasePage {
     }
 
     @Override
+    @Step("Open Checkout Information Page page")
     public void open() {
+        log.info("Opening the Checkout Information Page");
         driver.get(URL + "/checkout-step-one.html");
     }
 
