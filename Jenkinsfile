@@ -8,15 +8,6 @@ pipeline {
     parameters {
             gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
 
-            choice{
-                       choices: 'chrome\nfirefox',
-                       defaultValue: 'chrome',
-                       description:  'Browsers',
-                       name: 'BROWSER'
-                     }
-
-
-            booleanParam(defaultValue: true, name: 'HEADLESS', description: 'HEADLESS'),
         }
 
     stages {
@@ -25,6 +16,21 @@ pipeline {
                 // Get some code from a GitHub repository
                  git branch: "${params.BRANCH}", url: 'https://github.com/Gellershtein/Saucedemo.git'
 
+                script {
+                                    properties([
+                                        parameters([
+                                            choice(
+                                                choices: ['chrome', 'firefox'],
+                                                name: 'BROWSER'
+                                            ),
+                                            booleanParam(
+                                                defaultValue: true,
+                                                description: '',
+                                                name: 'HEADLESS'
+                                            )
+                                        ])
+                                    ])
+                                }
                 // Run Maven on a Unix agent.
                // sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
