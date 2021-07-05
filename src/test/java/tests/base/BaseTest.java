@@ -32,8 +32,11 @@ public abstract class BaseTest {
 
     @Parameters({"browser"})
     @BeforeMethod(description = "Open browser")
-    public void setUp(@Optional("chrome") String browser, ITestContext testContext) {
+    public void setUp(@Optional("chrome") String browser, String headless, ITestContext testContext) {
+        browser = System.getProperty("BROWSER");
+        headless = System.getProperty("HEADLESS");
         System.out.println(browser);
+        System.out.println(headless);
         if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();

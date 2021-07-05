@@ -23,8 +23,8 @@
         <log4j-core.version>2.14.1</log4j-core.version>
         <jackson-dataformat-yaml.version>2.12.3</jackson-dataformat-yaml.version>
         <suiteXmlFile>src/test/resources/regression.xml</suiteXmlFile>
-        <test.param>${USER}</test.param>
-        <test.param>${PASSWORD}</test.param>
+        <test.param>${env.BROWSER}</test.param>
+        <test.param>${env.HEADLESS}</test.param>
     </properties>
 
     <build>
